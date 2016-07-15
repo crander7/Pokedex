@@ -9,24 +9,56 @@
   </head>
   <body ng-controller="pokeCtrl">
     <header>
-      <h1>POKEMON</h1>
+      <div class="head-cont">
+        <img class='pokemon-header' src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="Pokemon">
+      </div>
     </header>
     <section class="pokedex">
       <div class="search">
-        <h2>Search Pokemon</h2>
         <br>
         <form ng-submit="pokeData(number)">
           <input ng-model="number" type="text" placeholder="Search pokemon">
         </form>
       </div>
-      {{pokeName}}
-      <div class="pokedex-pic">
+      <div class="pokedex-picture" ng-click="cssToggle = !cssToggle" ng-class="{box: cssToggle}">
+        <div ng-class="{gradient: cssToggle}" class="topLayer"></div>
+        <div class="pokedex-background"></div>
+          <div class="info-container">
+          <div>
+            <div class="poke-pic" ng-class="{open: cssToggle}">
+            <img src="{{pokepic}}" alt="" />
+          <div class="poke-name" ng-class="{open: cssToggle}">
+            <p>{{pokeName}}</p>
+          </div>
+          </div>
+          </div>
 
+          <div class="textInfo">
+            <div class="region">
+              <h3 class="infoTitle"></h3>
+              <p class="infoContent"></p>
+            </div>
+            <div class="type">
+              <h3 class="infoTitle"></h3>
+              <ul class="infoList">
+                <li ng-repeat="type in types">{{ types.type }}</li>
+              </ul>
+            </div>
+            <div class="moves">
+              <h3 class="infoTitle"></h3>
+              <ul class="infoList">
+                <li ng-repeat="move in moves">{{ moves.move }}</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="pokedex-pic left" ng-class="{slideLeft: cssToggle}"><img class='dex' src="./img/trans/Pokedex-leftside.png" alt="left"></div>
+        <div class="pokedex-pic ball-div"><img ng-class="{hide: cssToggle}" class='dex ball' src="./img/trans/Pokedex-ball-trans.png" alt="center"></div>
+        <div class="pokedex-pic right" ng-class="{slideRight: cssToggle}"><img class='dex' src="./img/trans/Pokedex-rightside.png" alt="right"></div>
       </div>
     </section>
-
     <footer>
-      <img src="{{pokepic}}" alt="pokemon" />
     </footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
