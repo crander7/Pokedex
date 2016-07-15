@@ -7,7 +7,7 @@ angular.module('pokedex')
       }
         return $http({
           method: 'GET',
-          url: 'http://pokeapi.co/api/v2/pokemon/' + searchTerm + '/'
+          url: 'https://pokeapi.co/api/v2/pokemon/' + searchTerm + '/'
         }).then(function (response) {
           console.log(response);
           return response.data;
