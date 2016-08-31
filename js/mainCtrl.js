@@ -57,13 +57,13 @@ angular.module('pokedex')
                 $scope.testName = "The End";
               }
               else {
-                $scope.pokeImg = 'https://pbs.twimg.com/profile_images/580498151703973888/UkkIZu0M.png'; //Idiot
+                $scope.pokeImg = 'https://pbs.twimg.com/profile_images/580498151703973888/UkkIZu0M.png';
                 $scope.testName = "Try Again";
               }
             } else {
                 $scope.pictureID = checkVal;
                 var temp = landingSrv.getName(input);
-                $scope.pokeImg = "http://www.serebii.net/art/th/" + $scope.pictureID + ".png";
+                $scope.pokeImg = "http://www.serebii.net/art/th/" + $scope.pictureID + ".png";//*****This is not secure
                 $scope.testName = temp.charAt(0).toUpperCase() + temp.slice(1);
             }
         };
