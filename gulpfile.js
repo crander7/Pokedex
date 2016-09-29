@@ -9,13 +9,13 @@ gulp.task('js', () => {
     presets: ['es2015']
   }))
   .pipe(concat('bundle.js'))
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest('.public//dist'));
 });
 
 gulp.task('css', () => {
   gulp.src('./styles/**/*.{css, scss}')
   .pipe(concat('bundle.css'))
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest('./public/dist'));
 });
 
 gulp.task('default', ['js', 'css']);
