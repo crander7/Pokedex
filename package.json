@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 start index.js --name pokedex",
+    "logs": "pm2 logs pokedex --lines 100",
+    "restart": "pm2 restart pokedex",
+    "delete": "pm2 delete pokedex"
   },
   "repository": {
     "type": "git",
